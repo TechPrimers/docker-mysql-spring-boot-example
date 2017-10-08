@@ -8,7 +8,20 @@ image: maven:3.3.9
 pipelines:
   default:
     - step:
+        name: Maven Clean Build
         caches:
           - maven
-        script: # Modify the commands below to build your repository.
-          - mvn -B clean install # -B batch mode makes Maven less verbose
+        script:
+          - mvn -B clean
+    - step:
+        name: Maven Compile Build
+        caches:
+          - maven
+        script:
+          - mvn -B compile
+    - step:
+        name: Maven Package Build
+        caches:
+          - maven
+        script:
+          - mvn -B package
