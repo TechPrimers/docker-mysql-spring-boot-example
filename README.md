@@ -1,0 +1,1 @@
+Sample for bit bucketpipeline test
