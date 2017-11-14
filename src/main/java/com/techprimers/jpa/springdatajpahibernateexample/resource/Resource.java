@@ -30,7 +30,6 @@ public class Resource {
                 .sorted()
                 .collect(Collectors.toList());
 
-
         return usersRepository.findAll();
     }
 
