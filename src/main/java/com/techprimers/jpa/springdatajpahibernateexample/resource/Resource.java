@@ -18,6 +18,7 @@ public class Resource {
         this.usersRepository = usersRepository;
     }
 
+
     @GetMapping("/")
     public List<Users> all() {
 
