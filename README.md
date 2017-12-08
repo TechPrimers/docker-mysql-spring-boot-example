@@ -1,4 +1,4 @@
-#Spring Boot on Docker connecting to MySQL Docker container
+# Spring Boot on Docker connecting to MySQL Docker container
 
 1. Use MySQL Image published by Docker Hub (https://hub.docker.com/_/mysql/)
 Command to run the mysql container
