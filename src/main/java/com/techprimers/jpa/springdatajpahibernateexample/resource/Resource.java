@@ -5,8 +5,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @RestController
 @RequestMapping("/all")
@@ -22,15 +20,21 @@ public class Resource {
     @GetMapping("/")
     public List<Users> all() {
 
-        Stream.of("How are you?", "Namaste",
-                "Hello", "Welcome to Youtube", "Hi", "Hello", "Namaste")
-                .filter(text -> text.startsWith("H"))
-                .map(text -> text.substring(2))
-                .distinct()
-                .sorted()
-                .collect(Collectors.toList());
 
         return usersRepository.findAll();
     }
 
+
+    @GetMapping("/create")
+    public List<Users> users() {
+        Users users = new Users();
+        users.setId(1);
+        users.setName("Sam");
+        users.setSalary(3400);
+        users.setTeamName("Development");
+
+        usersRepository.save(users);
+
+        return usersRepository.findAll();
+    }
 }
